@@ -36,23 +36,16 @@ class ViewController: BaseViewController {
         
         addKeyboardNotificationCenter()
         addTapGestureDismissKeyboard()
-        
-        
-        //Test
-//        let input = [1, 4, 5, 6, 7, 12, 14, 18, 19, 20, 22, 24]
-//        let input = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-//        let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-//        let input = [1, 6, 7, 4, 2, 10]
-
-//        print("mean", input.mean)
-//        print("median", input.median)
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        arrayInput.becomeFirstResponder()
     }
     
     private func initLayout() {
         titleLabel.text = viewModel.titleText
         arrayInput.placeholder = viewModel.placeholderText
-        arrayInput.becomeFirstResponder()
         errorLabel.textColor = UIColor.red
         hideError()
         calcBtn.titleLabel?.text = viewModel.calcBtnText
@@ -84,7 +77,7 @@ class ViewController: BaseViewController {
     override func keyboardChangeFrame(isAppear: Bool, keyboardHeight: CGFloat, duration: Double) {
         // keyboardChangeFrame notification
         UIView.animate(withDuration: duration) {
-            self.bottomConstraint.constant = !isAppear ? 24 : keyboardHeight + 10
+            self.bottomConstraint.constant = !isAppear ? 0 : keyboardHeight
         }
     }
 
