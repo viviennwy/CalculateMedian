@@ -93,6 +93,8 @@ class ViewController: BaseViewController {
 extension ViewController: ViewControllerDelegate {
     func validInput() {
         //vaild input and do calculate
+        meanLabel.text = viewModel.meanText + String(viewModel.calcArr.mean)
+        medianLabel.text = viewModel.medianText + String(viewModel.calcArr.median)
     }
     
     func invalidInput() {
