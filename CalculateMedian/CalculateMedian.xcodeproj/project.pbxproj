@@ -16,6 +16,12 @@
 		1EC388D8289941FA00203A26 /* CalculateMedianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388D7289941FA00203A26 /* CalculateMedianTests.swift */; };
 		1EC388E2289941FA00203A26 /* CalculateMedianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388E1289941FA00203A26 /* CalculateMedianUITests.swift */; };
 		1EC388E4289941FA00203A26 /* CalculateMedianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388E3289941FA00203A26 /* CalculateMedianUITestsLaunchTests.swift */; };
+		1EC388F2289B14F100203A26 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388F1289B14F100203A26 /* Array+Extension.swift */; };
+		1EC388F5289B168400203A26 /* CustomKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388F4289B168400203A26 /* CustomKeyboardView.swift */; };
+		1EC388F7289B169A00203A26 /* CustomKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EC388F6289B169A00203A26 /* CustomKeyboardView.xib */; };
+		1EC388FA289C4F9600203A26 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388F9289C4F9600203A26 /* ViewModel.swift */; };
+		1EC388FD289C676500203A26 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388FC289C676500203A26 /* BaseViewController.swift */; };
+		1EC388FF289C703400203A26 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC388FE289C703300203A26 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		1EC388DD289941FA00203A26 /* CalculateMedianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculateMedianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC388E1289941FA00203A26 /* CalculateMedianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateMedianUITests.swift; sourceTree = "<group>"; };
 		1EC388E3289941FA00203A26 /* CalculateMedianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateMedianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1EC388F1289B14F100203A26 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		1EC388F4289B168400203A26 /* CustomKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardView.swift; sourceTree = "<group>"; };
+		1EC388F6289B169A00203A26 /* CustomKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboardView.xib; sourceTree = "<group>"; };
+		1EC388F9289C4F9600203A26 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1EC388FC289C676500203A26 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1EC388FE289C703300203A26 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +111,12 @@
 		1EC388BF289941F900203A26 /* CalculateMedian */ = {
 			isa = PBXGroup;
 			children = (
+				1EC388FB289C674B00203A26 /* ViewController */,
+				1EC388F8289C4F8500203A26 /* ViewModel */,
+				1EC388F3289B166B00203A26 /* Custom */,
+				1EC388F0289B14DE00203A26 /* Extension */,
 				1EC388C0289941F900203A26 /* AppDelegate.swift */,
 				1EC388C2289941F900203A26 /* SceneDelegate.swift */,
-				1EC388C4289941F900203A26 /* ViewController.swift */,
-				1EC388C6289941F900203A26 /* Main.storyboard */,
 				1EC388C9289941FA00203A26 /* Assets.xcassets */,
 				1EC388CB289941FA00203A26 /* LaunchScreen.storyboard */,
 				1EC388CE289941FA00203A26 /* Info.plist */,
@@ -125,6 +139,42 @@
 				1EC388E3289941FA00203A26 /* CalculateMedianUITestsLaunchTests.swift */,
 			);
 			path = CalculateMedianUITests;
+			sourceTree = "<group>";
+		};
+		1EC388F0289B14DE00203A26 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1EC388F1289B14F100203A26 /* Array+Extension.swift */,
+				1EC388FE289C703300203A26 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1EC388F3289B166B00203A26 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				1EC388F4289B168400203A26 /* CustomKeyboardView.swift */,
+				1EC388F6289B169A00203A26 /* CustomKeyboardView.xib */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		1EC388F8289C4F8500203A26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1EC388F9289C4F9600203A26 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1EC388FB289C674B00203A26 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1EC388FC289C676500203A26 /* BaseViewController.swift */,
+				1EC388C4289941F900203A26 /* ViewController.swift */,
+				1EC388C6289941F900203A26 /* Main.storyboard */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +283,7 @@
 			files = (
 				1EC388CD289941FA00203A26 /* LaunchScreen.storyboard in Resources */,
 				1EC388CA289941FA00203A26 /* Assets.xcassets in Resources */,
+				1EC388F7289B169A00203A26 /* CustomKeyboardView.xib in Resources */,
 				1EC388C8289941F900203A26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC388FF289C703400203A26 /* String+Extension.swift in Sources */,
 				1EC388C5289941F900203A26 /* ViewController.swift in Sources */,
 				1EC388C1289941F900203A26 /* AppDelegate.swift in Sources */,
 				1EC388C3289941F900203A26 /* SceneDelegate.swift in Sources */,
+				1EC388F2289B14F100203A26 /* Array+Extension.swift in Sources */,
+				1EC388FA289C4F9600203A26 /* ViewModel.swift in Sources */,
+				1EC388FD289C676500203A26 /* BaseViewController.swift in Sources */,
+				1EC388F5289B168400203A26 /* CustomKeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
