@@ -41,7 +41,6 @@ class CustomKeyboardView: UIView {
     }
 
     // MARK:- Button actions from .xib file
-
     @IBAction func keyTapped(sender: UIButton) {
         // When a button is tapped, send that information to the
         // delegate (ie, the view controller)

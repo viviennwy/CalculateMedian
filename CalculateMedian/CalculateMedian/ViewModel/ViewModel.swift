@@ -33,12 +33,7 @@ class ViewModel {
     
     private func isInputValid(inputText: String) -> Bool {
         // allow number and comma. But on start and end it does not allow comma.
-//        let numberAndComma = "^\\d*\\,?\\d*$"
         let numberAndComma = "\\d+,?\\d+\\$?"
-        //This regular expression is used to validate only comma separated numbers.
-//        let numberAndComma = "^([0-9]*)+(,[0-9]+)+$"
-//        let numberAndComma = "^([0-9][,]?)*([0-9]*)$"
-//        let numberAndComma = "^\\d*\\,?\\d*$"
         return inputText.isMatching(regex: numberAndComma)
     }
     
