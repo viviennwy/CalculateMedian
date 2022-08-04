@@ -43,6 +43,13 @@ class ViewController: BaseViewController {
         arrayInput.becomeFirstResponder()
     }
     
+    override func keyboardChangeFrame(isAppear: Bool, keyboardHeight: CGFloat, duration: Double) {
+        // keyboardChangeFrame notification
+        UIView.animate(withDuration: duration) {
+            self.bottomConstraint.constant = !isAppear ? 0 : keyboardHeight
+        }
+    }
+    
     private func initLayout() {
         titleLabel.text = viewModel.titleText
         arrayInput.placeholder = viewModel.placeholderText
@@ -64,6 +71,7 @@ class ViewController: BaseViewController {
         errorLabel.isHidden = true
     }
     
+    // MARK:- Button actions from .storyboard file
     @IBAction func calculateAction(_ sender: Any) {
         hideError()
         viewModel.inputChecking(text: arrayInput.text ?? "")
@@ -73,16 +81,10 @@ class ViewController: BaseViewController {
         hideError()
         arrayInput.text = ""
     }
-    
-    override func keyboardChangeFrame(isAppear: Bool, keyboardHeight: CGFloat, duration: Double) {
-        // keyboardChangeFrame notification
-        UIView.animate(withDuration: duration) {
-            self.bottomConstraint.constant = !isAppear ? 0 : keyboardHeight
-        }
-    }
 
 }
 
+// MARK:- ViewControllerDelegate
 extension ViewController: ViewControllerDelegate {
     func validInput() {
         //vaild input and do calculate
@@ -96,6 +98,7 @@ extension ViewController: ViewControllerDelegate {
     }
 }
 
+// MARK:- KeyboardDelegate
 extension ViewController: KeyboardDelegate {
     func keyWasTapped(character: String) {
         // numbers action
