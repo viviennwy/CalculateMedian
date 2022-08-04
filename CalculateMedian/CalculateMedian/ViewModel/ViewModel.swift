@@ -52,7 +52,7 @@ class ViewModel {
             // start with or end with ','
             errorMsg = InputError.invalidError.rawValue
             delegate?.invalidInput()
-        } else if isInputValid(inputText: text) {
+        } else if text.isInt || isInputValid(inputText: text) {
             // valid input set of numbers
             let str = text.replacingOccurrences(of: " ", with: "")
             let arr = str.split(separator: ",")
