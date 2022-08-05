@@ -32,24 +32,24 @@ class ViewModel {
     let customKeyboardHeight = 300
     
     private func isInputValid(inputText: String) -> Bool {
-        // allow number and comma. But on start and end it does not allow comma.
-        let numberAndComma = "\\d+,?\\d+\\$?"
+        // allow number and comma.
+        let numberAndComma = "^([0-9]*)+(,[0-9]+)+$"
         return inputText.isMatching(regex: numberAndComma)
     }
     
     func inputChecking(text: String) {
         errorMsg = ""
-        if text.isEmpty {
+        let str = text.replacingOccurrences(of: " ", with: "")
+        if str.isEmpty {
             // empty
             errorMsg = InputError.emptyError.rawValue
             delegate?.invalidInput()
-        } else if text.prefix(1) == "," || text.suffix(1) == "," {
+        } else if str.prefix(1) == "," || str.suffix(1) == "," {
             // start with or end with ','
             errorMsg = InputError.invalidError.rawValue
             delegate?.invalidInput()
-        } else if text.isInt || isInputValid(inputText: text) {
+        } else if str.isInt || isInputValid(inputText: str) {
             // valid input set of numbers
-            let str = text.replacingOccurrences(of: " ", with: "")
             let arr = str.split(separator: ",")
             let intArray = arr.compactMap { Int($0) }
             
